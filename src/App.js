@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import AppBar from './AppBar';
+import CoinList from './CoinList';
 
 import styled, { css } from 'styled-components';
 import cc from 'cryptocompare';
@@ -37,7 +38,7 @@ class App extends Component {
   }
 
   fetchCoins = async () => {
-    let coinList = await cc.coinList();
+    let coinList = (await cc.coinList()).Data;
     this.setState({
       coinList
     })
@@ -65,6 +66,9 @@ class App extends Component {
         {this.firstVisitMessage()}
         <div onClick={this.confirmFavorites}>
           Confirm Favorites
+        </div>
+        <div>
+          {CoinList.call(this)}
         </div>
       </div>
     )
