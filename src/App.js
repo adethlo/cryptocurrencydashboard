@@ -4,16 +4,35 @@ import './App.css';
 
 import styled from 'styled-components';
 
-const CustomElement = styled.div`
-  color: green;
+const Logo = styled.div`
+  font-size: 1.5em;
+`
+
+const ControlButton = styled.div`
+  
+`
+
+const AppLayout = styled.div`
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 100px auto 100px 100px;
 `
 
 class App extends Component {
   render() {
     return (
-      <CustomElement>
-        Hello
-      </CustomElement>
+      <AppLayout>
+        <Logo>
+          CryptoDash
+        </Logo>
+        <div></div>
+        <ControlButton>
+          Dashboard
+        </ControlButton>
+        <ControlButton>
+          Settings
+        </ControlButton>
+      </AppLayout>
     );
   }
 }
